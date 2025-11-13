@@ -6,9 +6,9 @@ async function testChromaConnection() {
     const embedder = new DefaultEmbeddingFunction();
 
     const client = new ChromaClient({
-        host: "localhost",
-        port: "8002",
-        ssl: false,
+        host: "chroma.cloudpilot.com.br",
+        port: 8000,
+        ssl: true,
     });
 
     // Test connection by listing collections first
