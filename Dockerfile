@@ -1,17 +1,14 @@
 # Custom ChromaDB Docker Image
 FROM chromadb/chroma:1.3.4.dev21
 
-# Create simple config for testing
-RUN echo 'persist_path: "/data"' > /config.yaml
-
-# Set environment variables for additional configuration
-ENV CHROMA_SERVER_HOST=0.0.0.0
-ENV CHROMA_SERVER_HTTP_PORT=8000
-ENV CHROMA_SERVER_CORS_ALLOW_ORIGINS=*
-ENV CHROMA_SERVER_AUTH_CREDENTIALS_PROVIDER=chromadb.auth.basic.BasicAuthServerProvider
-ENV CHROMA_SERVER_AUTH_PROVIDER=chromadb.auth.basic.BasicAuthServerProvider
-ENV CHROMA_ALLOW_RESET=true
-ENV CHROMA_LOG_LEVEL=INFO
+# Create config.yaml with echo commands
+RUN echo '# server settings #' > /config.yaml && \
+    echo 'port: 8000' >> /config.yaml && \
+    echo 'listen_address: "0.0.0.0"' >> /config.yaml && \
+    echo 'max_payload_size_bytes: 41943040' >> /config.yaml && \
+    echo 'cors_allow_origins: ["*"]' >> /config.yaml && \
+    echo 'persist_path: "./data"' >> /config.yaml && \
+    echo 'allow_reset: true' >> /config.yaml
 
 # Ensure data directory exists
 RUN mkdir -p /data

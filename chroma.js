@@ -7,7 +7,7 @@ async function testChromaConnection() {
 
     const client = new ChromaClient({
         host: "chroma.cloudpilot.com.br",
-        port: 8000,
+        // port: 443,
         ssl: true,
     });
 
