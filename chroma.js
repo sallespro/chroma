@@ -7,7 +7,7 @@ async function testChromaConnection() {
 
     const client = new ChromaClient({
         host: "localhost",
-        port: "8001",
+        port: "8002",
         ssl: false,
     });
 

@@ -1,18 +1,13 @@
 services:
 
   server:
-    image: chromadb/chroma
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - chroma_data:/data
     ports:
       - "8001:8000"
-    environment:
-      - CHROMA_SERVER_HOST=0.0.0.0
-      - CHROMA_SERVER_HTTP_PORT=8000
-      - CHROMA_SERVER_CORS_ALLOW_ORIGINS=*
-      - CHROMA_SERVER_MAX_PAYLOAD_SIZE_BYTES=41943040
-      - CHROMA_PERSIST_DIRECTORY=/data
-      - CHROMA_ALLOW_RESET=true
 
 volumes:
   chroma_data:
