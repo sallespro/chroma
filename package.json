@@ -1,0 +1,25 @@
+{
+  "name": "chroma",
+  "version": "1.0.0",
+  "description": "",
+  "main": "chroma.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sallespro/chroma.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/sallespro/chroma/issues"
+  },
+  "homepage": "https://github.com/sallespro/chroma#readme",
+  "dependencies": {
+    "@chroma-core/default-embed": "^0.1.9",
+    "chromadb": "^3.1.2"
+  }
+}
