@@ -6,7 +6,7 @@ RUN echo '# server settings #' > /config.yaml && \
     echo 'port: 8000' >> /config.yaml && \
     echo 'listen_address: "0.0.0.0"' >> /config.yaml && \
     echo 'max_payload_size_bytes: 41943040' >> /config.yaml && \
-    echo 'cors_allow_origins: ["*"]' >> /config.yaml && \
+    echo 'cors_allow_origins: ["https://chroma.cloudpilot.com.br"]' >> /config.yaml && \
     echo 'persist_path: "./data"' >> /config.yaml && \
     echo 'allow_reset: true' >> /config.yaml
 
